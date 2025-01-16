@@ -1,9 +1,9 @@
 {
-  "short_name": "최재준세무회계 - 길택스",
-  "name": "최재준세무회계 - 길택스",
+  "short_name": "세무회계 약속",
+  "name": "세무회계 약속",
   "icons": [
     {
-      "src": "favicon-2.ico",
+      "src": "logo320-2.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },

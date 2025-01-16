@@ -8,7 +8,14 @@ const app = express();
 const fs = require('fs');
 
 app.use((req, res, next) => {
-    const host = req.headers.host; // 요청된 호스트 이름
+    if (req.url.endsWith('.js')) {
+        res.setHeader('Content-Encoding', 'identity');
+    }
+    next();
+});
+
+app.use((req, res, next) => {
+    const host = req.headers.host;
 
     let subdomainsTxt = '';
     try {
@@ -25,7 +32,6 @@ app.use((req, res, next) => {
         }
     }
 
-    // 다른 요청은 기본 처리
     next();
 });
 
@@ -41,5 +47,4 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'web', 'index.html'));
 });
 
-// 서버 시작
 app.listen(80);

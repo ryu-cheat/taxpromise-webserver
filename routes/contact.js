@@ -20,7 +20,7 @@ router.post('/', async (req, res) => {
 
     const mailOptions = {
         from: process.env.EMAIL_USER,
-        to: 'cutax_0801@naver.com',
+        to: 'tax_promise@naver.com',
         subject: `${name}님이 문의를 보냈습니다.`,
         text: `
       사업 유형: ${businessType}
